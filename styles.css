@@ -1,0 +1,69 @@
+/* Railway ticket form — custom styles layered on Bootstrap */
+:root {
+  --teal: #0F6B5F;
+  --gold: #F2A93B;
+  --ink: #16302B;
+  --paper: #F4F7F5;
+  --mint: #E6EFEC;
+}
+* { box-sizing: border-box; }
+body {
+  margin: 0;
+  background: var(--paper);
+  color: var(--ink);
+  font-family: "Montserrat", sans-serif;
+}
+.site-header { background: #fff; border-bottom: 1px solid #e4ece8; }
+.brand { display: inline-flex; align-items: center; gap: .65rem; color: var(--ink); font-weight: 700; letter-spacing: -.04em; }
+.brand:hover { color: var(--teal); }
+.brand-mark {
+  display: inline-grid; place-items: center; width: 2rem; height: 2rem;
+  border-radius: .7rem; background: var(--teal); color: #fff; font-size: 1rem;
+}
+.nav-note { color: #6a7c76; font-size: .78rem; }
+.hero { padding: .6rem 0 .2rem; }
+.eyebrow { color: var(--teal); font-size: .68rem; font-weight: 700; letter-spacing: .13em; }
+.hero h1 { max-width: 700px; font-size: clamp(2rem, 4.2vw, 3.5rem); line-height: 1.1; font-weight: 700; letter-spacing: -.055em; }
+.hero-copy { color: #667872; max-width: 570px; line-height: 1.7; font-size: .95rem; }
+.booking-card {
+  background: #fff; border: 1px solid #e1eae5; border-radius: 1.35rem;
+  box-shadow: 0 1rem 3rem rgba(22, 48, 43, .08); padding: clamp(1.25rem, 4vw, 2.5rem);
+}
+.card-heading { display: flex; align-items: center; justify-content: space-between; gap: 1rem; margin-bottom: 1.7rem; }
+.card-heading h2 { font-size: clamp(1.35rem, 3vw, 1.8rem); font-weight: 700; letter-spacing: -.04em; margin: 0; }
+.secure-note { white-space: nowrap; color: var(--teal); background: var(--mint); border-radius: 2rem; padding: .55rem .8rem; font-size: .7rem; font-weight: 600; }
+.secure-note span { color: var(--gold); font-size: .65rem; margin-right: .25rem; }
+.field-label, .form-label { color: var(--ink); font-weight: 600; font-size: .82rem; }
+.required { color: #c16d1d; }
+.journey-options { background: var(--paper); border-radius: .8rem; padding: .8rem 1rem; display: flex; flex-wrap: wrap; gap: .4rem 1.2rem; }
+.form-check-input { border-color: #bdcec7; }
+.form-check-input:checked { background-color: var(--teal); border-color: var(--teal); }
+.form-check-input:focus, .form-control:focus, .form-select:focus {
+  border-color: var(--teal); box-shadow: 0 0 0 .22rem rgba(15, 107, 95, .13);
+}
+.form-control, .form-select {
+  min-height: 3.15rem; border: 1px solid #dce6e1; border-radius: .75rem;
+  background-color: #fbfcfb; color: var(--ink); font-size: .88rem; padding: .75rem .9rem;
+}
+.form-control::placeholder { color: #9aa9a3; }
+.input-icon { position: relative; }
+.input-icon > span { position: absolute; z-index: 1; top: .78rem; left: .9rem; color: var(--teal); }
+.input-icon .form-control { padding-left: 2.4rem; }
+.agreement .form-check-label { color: #5d7069; font-size: .8rem; line-height: 1.6; }
+.form-actions { display: flex; gap: .8rem; }
+.btn { min-height: 3.1rem; border-radius: .75rem; padding: .8rem 1.2rem; font-size: .85rem; font-weight: 700; }
+.btn-find { flex: 1; display: flex; align-items: center; justify-content: space-between; background: var(--teal); border-color: var(--teal); }
+.btn-find:hover, .btn-find:focus { background: #0b574e; border-color: #0b574e; }
+.btn-outline-secondary { color: var(--ink); border-color: #d6e1dc; }
+.btn-outline-secondary:hover { color: var(--ink); background: var(--mint); border-color: #c5d7cf; }
+.form-footnote { color: #8a9a93; font-size: .7rem; line-height: 1.6; }
+.site-footer { color: #84958e; font-size: .72rem; }
+.site-footer span { color: var(--gold); }
+@media (max-width: 575.98px) {
+  .nav-note { font-size: .68rem; }
+  .card-heading { align-items: flex-start; flex-direction: column; }
+  .secure-note { align-self: flex-start; }
+  .form-actions { flex-direction: column; }
+  .btn-find { order: 0; }
+  .btn-clear { order: 1; }
+}

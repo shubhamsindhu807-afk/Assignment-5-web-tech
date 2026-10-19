@@ -1,0 +1,119 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>AITU Hack 2026 — Registration</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+  <style>
+    .hack-page { min-height: 100vh; background: linear-gradient(135deg, #edf5f1, #f8f4e9); }
+    .hack-card { max-width: 850px; margin-inline: auto; border: 1px solid #dce8e2; border-radius: 1.25rem; box-shadow: 0 1rem 3rem rgba(22,48,43,.08); }
+    .hack-card .form-control, .hack-card .form-select { background: #fff; }
+    .invalid-feedback { display: none; }
+    .form-control:user-invalid ~ .invalid-feedback,
+    .form-select:user-invalid ~ .invalid-feedback,
+    .form-check-input:user-invalid ~ .invalid-feedback { display: block; }
+    input:user-invalid, select:user-invalid, textarea:user-invalid { border-color: #dc3545; }
+    input:user-valid, select:user-valid, textarea:user-valid { border-color: #198754; }
+    .help-text { font-size: .78rem; color: #6b7b75; }
+  </style>
+</head>
+<body class="hack-page">
+  <main class="container py-4 py-lg-5">
+    <header class="text-center mb-4">
+      <p class="eyebrow mb-2">ASTANA IT UNIVERSITY</p>
+      <h1 class="fw-bold">AITU Hack 2026</h1>
+      <p class="text-secondary mb-0">Build something useful. Meet your people.</p>
+    </header>
+
+    <section class="hack-card bg-white p-4 p-lg-5" aria-labelledby="form-title">
+      <h2 id="form-title" class="h4 fw-bold mb-1">Participant registration</h2>
+      <p class="help-text mb-4">Complete each required field before submitting.</p>
+      <form action="#" method="get">
+        <div class="row g-3">
+          <div class="col-12 col-md-6">
+            <label class="form-label" for="full-name">Full name *</label>
+            <input class="form-control" id="full-name" name="full-name" type="text" minlength="2" maxlength="40" required>
+            <div class="invalid-feedback">Enter between 2 and 40 characters.</div>
+          </div>
+          <div class="col-12 col-md-6">
+            <label class="form-label" for="university-email">University email *</label>
+            <input class="form-control" id="university-email" name="university-email" type="email" required>
+            <div class="invalid-feedback">Enter a valid email address, such as name@astanait.edu.kz.</div>
+          </div>
+          <div class="col-12 col-md-6">
+            <label class="form-label" for="age">Age *</label>
+            <input class="form-control" id="age" name="age" type="number" min="16" max="30" step="1" required>
+            <div class="invalid-feedback">Age must be a whole number from 16 to 30.</div>
+          </div>
+          <div class="col-12 col-md-6">
+            <label class="form-label" for="team-size">Team size *</label>
+            <input class="form-control" id="team-size" name="team-size" type="number" min="1" max="4" step="1" required>
+            <div class="invalid-feedback">Choose a whole number from 1 to 4.</div>
+          </div>
+          <div class="col-12 col-md-6">
+            <label class="form-label" for="track">Track *</label>
+            <select class="form-select" id="track" name="track" required>
+              <option value="" selected disabled>Choose…</option>
+              <option>Web</option><option>Mobile</option><option>AI</option><option>GameDev</option>
+            </select>
+            <div class="invalid-feedback">Choose one track.</div>
+          </div>
+          <div class="col-12 col-md-6">
+            <label class="form-label" for="arrival-day">Arrival day *</label>
+            <input class="form-control" id="arrival-day" name="arrival-day" type="date" min="2026-11-20" max="2026-11-22" required>
+            <div class="invalid-feedback">Choose a date from 20 to 22 November 2026.</div>
+          </div>
+          <div class="col-12 col-md-6">
+            <label class="form-label" for="checkin">Check-in time *</label>
+            <input class="form-control" id="checkin" name="checkin" type="time" min="09:00" max="18:00" step="1800" required>
+            <div class="invalid-feedback">Choose 09:00–18:00 in 30-minute steps.</div>
+          </div>
+          <div class="col-12 col-md-6">
+            <label class="form-label" for="fee">Entry fee (₸) *</label>
+            <input class="form-control" id="fee" name="fee" type="number" min="0" max="5000" step="500" required>
+            <div class="invalid-feedback">Fee must be 0–5000 ₸ in steps of 500 ₸.</div>
+          </div>
+          <fieldset class="col-12">
+            <legend class="form-label mb-2">Experience level *</legend>
+            <div class="d-flex flex-wrap gap-3">
+              <div class="form-check"><input class="form-check-input" id="beginner" name="experience" type="radio" value="beginner" required><label class="form-check-label" for="beginner">Beginner</label></div>
+              <div class="form-check"><input class="form-check-input" id="intermediate" name="experience" type="radio" value="intermediate"><label class="form-check-label" for="intermediate">Intermediate</label></div>
+              <div class="form-check"><input class="form-check-input" id="advanced" name="experience" type="radio" value="advanced"><label class="form-check-label" for="advanced">Advanced</label></div>
+            </div>
+            <div class="help-text mt-1">Select one option.</div>
+          </fieldset>
+          <div class="col-12">
+            <label class="form-label" for="github">GitHub profile (optional)</label>
+            <input class="form-control" id="github" name="github" type="url" placeholder="https://github.com/username">
+            <div class="invalid-feedback">Enter a full URL starting with https://.</div>
+          </div>
+          <div class="col-12 col-md-6">
+            <label class="form-label" for="password">Password *</label>
+            <input class="form-control" id="password" name="password" type="password" minlength="8" maxlength="20" required>
+            <div class="invalid-feedback">Use 8–20 characters.</div>
+          </div>
+          <div class="col-12 col-md-6">
+            <label class="form-label" for="motivation">Motivation *</label>
+            <textarea class="form-control" id="motivation" name="motivation" minlength="50" maxlength="300" rows="3" required></textarea>
+            <div class="invalid-feedback">Write between 50 and 300 characters.</div>
+          </div>
+          <div class="col-12">
+            <div class="form-check">
+              <input class="form-check-input" id="rules" name="rules" type="checkbox" required>
+              <label class="form-check-label" for="rules">I have read and agree to the hackathon rules. *</label>
+              <div class="invalid-feedback">You must agree before submitting.</div>
+            </div>
+          </div>
+          <div class="col-12 d-flex flex-column flex-sm-row gap-2 mt-4">
+            <button class="btn btn-primary flex-grow-1" type="submit">Submit registration</button>
+            <button class="btn btn-outline-secondary" type="reset">Clear form</button>
+          </div>
+        </div>
+      </form>
+    </section>
+    <p class="text-center help-text mt-3">Practice form for Assignment 4 — no registration is sent to a server.</p>
+  </main>
+</body>
+</html>
